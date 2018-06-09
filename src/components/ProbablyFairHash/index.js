@@ -1,4 +1,4 @@
-import { ProbablyFairHashView } from './views';
+import { ProbablyFairHashConnector } from './connectors';
 
 
-export default ProbablyFairHashView;
+export default ProbablyFairHashConnector;

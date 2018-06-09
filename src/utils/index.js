@@ -23,3 +23,7 @@ export function saveState(state) {
 
   localStorage.setItem('balance', serializedBalance);
 }
+
+export function getNextBetNumber() {
+  return Math.floor(Math.random(0, 1) * 100) + 1;
+}

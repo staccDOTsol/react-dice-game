@@ -1,13 +1,14 @@
 import React from 'react';
 import { FormGroup } from 'reactstrap';
+import md5 from 'md5';
 
 import { ProbablyFairHashViewPropType } from '../propTypes';
 
 
-function ProbablyFairHashView({ hash }) {
+function ProbablyFairHashView({ nexBetNumber }) {
   return (
     <FormGroup>
-      Provably Fair Hash: <b>{hash}</b>
+      Provably Fair Hash: <b>{md5(nexBetNumber)}</b>
     </FormGroup>
   );
 }

@@ -1,4 +1,8 @@
-import { getPreloadedState, saveState } from '../';
+import {
+  getPreloadedState,
+  saveState,
+  getNextBetNumber
+} from '../';
 import { DEFAULT_BALANCE } from '../../constants/balance';
 
 
@@ -37,5 +41,19 @@ describe('saveState', () => {
 
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     expect(localStorage.setItem).toHaveBeenCalledWith('balance', expected);
+  });
+});
+
+describe('getNextBetNumber', () => {
+  it('should return 1', () => {
+    Math.random = jest.fn(() => 0);
+
+    expect(getNextBetNumber()).toBe(1);
+  });
+
+  it('should return 100', () => {
+    Math.random = jest.fn(() => 0.999);
+
+    expect(getNextBetNumber()).toBe(100);
   });
 });

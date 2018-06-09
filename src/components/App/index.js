@@ -15,7 +15,7 @@ function App() {
       <BetAmount />
       <BetNumber />
       <ButtonsPanel number={40} />
-      <ProbablyFairHash hash="probably fair hash" />
+      <ProbablyFairHash />
       <Alert color="success">64 WIN</Alert>
     </Container>
   );
