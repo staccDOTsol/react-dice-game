@@ -11,4 +11,13 @@ describe('diceGame actions', () => {
       payload: { betAmount },
     });
   });
+
+  it('should create an action to set bet number', () => {
+    const betNumber = 50;
+
+    expect(diceGameActions.setBetNumber(betNumber)).toEqual({
+      type: diceGameActionTypes.SET_BET_NUMBER,
+      payload: { betNumber },
+    });
+  });
 });

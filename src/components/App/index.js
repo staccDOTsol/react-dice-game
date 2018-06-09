@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import Balance from '../Balance';
 import BetAmount from '../BetAmount';
-import InputControl from '../InputControl';
+import BetNumber from '../BetNumber';
 import ButtonsPanel from '../ButtonsPanel';
 import ProbablyFairHash from '../ProbablyFairHash';
 
@@ -13,7 +13,7 @@ function App() {
     <Container>
       <Balance />
       <BetAmount />
-      <InputControl label="Number" min={1} max={100} />
+      <BetNumber />
       <ButtonsPanel number={40} />
       <ProbablyFairHash hash="probably fair hash" />
       <Alert color="success">64 WIN</Alert>

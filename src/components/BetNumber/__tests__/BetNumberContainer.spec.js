@@ -1,18 +1,18 @@
 import { getShallowWrapper } from '../../../utils/testUtils';
-import BetAmountContainer from '../containers/BetAmountContainer';
+import BetNumberContainer from '../containers/BetNumberContainer';
 
 
-describe('BetAmountContainer', () => {
+describe('BetNumberContainer', () => {
   let props;
   let wrapper;
   let instance;
 
   beforeEach(() => {
     props = {
-      setBetAmount: jest.fn(),
+      setBetNumber: jest.fn(),
     };
 
-    wrapper = getShallowWrapper(BetAmountContainer, props);
+    wrapper = getShallowWrapper(BetNumberContainer, props);
     instance = wrapper.instance();
   });
 
@@ -24,13 +24,13 @@ describe('BetAmountContainer', () => {
 
   describe('methods', () => {
     describe('handleChange', () => {
-      it('should call setBetAmount', () => {
+      it('should call setBetNumber', () => {
         const event = { currentTarget: { value: 5 } };
 
         instance.handleChange(event);
 
-        expect(props.setBetAmount).toHaveBeenCalledTimes(1);
-        expect(props.setBetAmount).toHaveBeenCalledWith(event.currentTarget.value);
+        expect(props.setBetNumber).toHaveBeenCalledTimes(1);
+        expect(props.setBetNumber).toHaveBeenCalledWith(event.currentTarget.value);
       });
     });
   });

@@ -28,4 +28,18 @@ describe('diceGame reducer', () => {
       });
     });
   });
+
+  describe('SET_BET_NUMBER', () => {
+    it('should set bet number', () => {
+      const betNumber = 1;
+
+      expect(diceGameReducer(
+        deepFreeze(initialState),
+        diceGameActions.setBetNumber(betNumber)
+      )).toEqual({
+        ...initialState,
+        betNumber,
+      });
+    });
+  });
 });

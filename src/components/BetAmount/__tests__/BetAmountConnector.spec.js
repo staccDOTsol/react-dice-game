@@ -11,17 +11,10 @@ jest.mock('../containers', () => ({
 
 describe('BetAmountConnector', () => {
   let wrapper;
-  let initialState;
 
   beforeAll(() => {
-    initialState = {
-      balance: {
-        value: 0,
-      },
-    };
-
     const mockStore = configureStore([]);
-    const store = mockStore(initialState);
+    const store = mockStore({});
 
     wrapper = getShallowWrapper(BetAmountConnector, {}, {context: {store}});
   });
