@@ -9,19 +9,30 @@ import {
 import { InputControlViewPropType } from '../propTypes';
 
 
-function InputControlView({
-  label, value, min, max,
-}) {
+function handleKeyPress(event) {
+  if (!/^\d+$/.test(event.key)) {
+    event.preventDefault();
+  }
+}
+
+function InputControlView({ label, onChange }) {
   return (
     <FormGroup row>
       <Label sm="3" md="2">{label}</Label>
       <Col>
-        <Input type="number" min={min} max={max} value={value} />
+        <Input
+          onChange={onChange}
+          onKeyPress={handleKeyPress}
+        />
       </Col>
     </FormGroup>
   );
 }
 
 InputControlView.propTypes = InputControlViewPropType;
+
+InputControlView.defaultProps = {
+  onChange: () => {},
+};
 
 export default InputControlView;

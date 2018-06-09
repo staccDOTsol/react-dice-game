@@ -3,6 +3,7 @@ import { Container, Alert } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Balance from '../Balance';
+import BetAmount from '../BetAmount';
 import InputControl from '../InputControl';
 import ButtonsPanel from '../ButtonsPanel';
 import ProbablyFairHash from '../ProbablyFairHash';
@@ -11,7 +12,7 @@ function App() {
   return (
     <Container>
       <Balance />
-      <InputControl label="Bet Amount" />
+      <BetAmount />
       <InputControl label="Number" min={1} max={100} />
       <ButtonsPanel number={40} />
       <ProbablyFairHash hash="probably fair hash" />

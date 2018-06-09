@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputControlView render should display correct 1`] = `
+"<FormGroup row={true} tag=\\"div\\">
+  <Label sm=\\"3\\" md=\\"2\\" tag=\\"label\\" widths={{...}}>
+    label
+  </Label>
+  <Col tag=\\"div\\" widths={{...}}>
+    <Input onChange={[Function: mockConstructor]} onKeyPress={[Function: handleKeyPress]} type=\\"text\\" />
+  </Col>
+</FormGroup>"
+`;
