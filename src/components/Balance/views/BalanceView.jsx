@@ -9,22 +9,30 @@ import {
   Button,
 } from 'reactstrap';
 
-const INITIAL_BALANCE = 100;
+import { BalanceViewPropType } from '../propTypes';
 
-function BalanceView() {
+
+function BalanceView({ value, onButtonClick }) {
   return (
     <FormGroup row>
       <Label sm="3" md="2">Balance</Label>
       <Col>
         <InputGroup>
-          <Input disabled value={INITIAL_BALANCE} />
+          <Input disabled value={value} />
           <InputGroupAddon addonType="append">
-            <Button disabled>Free Credits</Button>
+            <Button
+              onClick={onButtonClick}
+              disabled={value > 0}
+            >
+              Free Credits
+            </Button>
           </InputGroupAddon>
         </InputGroup>
       </Col>
     </FormGroup>
   );
 }
+
+BalanceView.propTypes = BalanceViewPropType;
 
 export default BalanceView;

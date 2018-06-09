@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BalanceView balance value = 0 should display correct 1`] = `
+"<FormGroup row={true} tag=\\"div\\">
+  <Label sm=\\"3\\" md=\\"2\\" tag=\\"label\\" widths={{...}}>
+    Balance
+  </Label>
+  <Col tag=\\"div\\" widths={{...}}>
+    <InputGroup tag=\\"div\\">
+      <Input disabled={true} value={0} type=\\"text\\" />
+      <InputGroupAddon addonType=\\"append\\" tag=\\"div\\">
+        <Button onClick={[Function: mockConstructor]} disabled={false} color=\\"secondary\\" tag=\\"button\\">
+          Free Credits
+        </Button>
+      </InputGroupAddon>
+    </InputGroup>
+  </Col>
+</FormGroup>"
+`;
+
+exports[`BalanceView balance value > 0 should display correct 1`] = `
+"<FormGroup row={true} tag=\\"div\\">
+  <Label sm=\\"3\\" md=\\"2\\" tag=\\"label\\" widths={{...}}>
+    Balance
+  </Label>
+  <Col tag=\\"div\\" widths={{...}}>
+    <InputGroup tag=\\"div\\">
+      <Input disabled={true} value={10} type=\\"text\\" />
+      <InputGroupAddon addonType=\\"append\\" tag=\\"div\\">
+        <Button onClick={[Function: mockConstructor]} disabled={true} color=\\"secondary\\" tag=\\"button\\">
+          Free Credits
+        </Button>
+      </InputGroupAddon>
+    </InputGroup>
+  </Col>
+</FormGroup>"
+`;

@@ -1,4 +1,4 @@
-import { BalanceView } from './views';
+import { BalanceConnector } from './connectors';
 
 
-export default BalanceView;
+export default BalanceConnector;
