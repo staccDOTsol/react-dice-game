@@ -2,18 +2,15 @@ import React from 'react';
 import { FormGroup } from 'reactstrap';
 
 import BetButtonControl from '../../BetButtonControl';
-import ButtonsPanelViewPropType from '../propTypes';
 
 
-function ButtonsPanelView({ number }) {
+function ButtonsPanelView() {
   return (
     <FormGroup row>
-      <BetButtonControl number={number} />
-      <BetButtonControl number={number} isBetLow />
+      <BetButtonControl betType="high" />
+      <BetButtonControl betType="low" />
     </FormGroup>
   );
 }
-
-ButtonsPanelView.propTypes = ButtonsPanelViewPropType;
 
 export default ButtonsPanelView;

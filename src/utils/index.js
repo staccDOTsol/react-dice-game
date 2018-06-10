@@ -1,4 +1,5 @@
 import { DEFAULT_BALANCE } from '../constants/balance';
+import { MAX_BET_NUMBER } from '../constants/diceGame';
 
 export function getPreloadedState() {
   let balance = {
@@ -24,6 +25,6 @@ export function saveState(state) {
   localStorage.setItem('balance', serializedBalance);
 }
 
-export function getNextBetNumber() {
-  return Math.floor(Math.random(0, 1) * 100) + 1;
+export function getBetNumber() {
+  return Math.floor(Math.random(0, 1) * MAX_BET_NUMBER) + 1;
 }

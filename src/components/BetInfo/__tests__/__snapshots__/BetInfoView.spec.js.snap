@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BetInfoView render should display correct 1`] = `
+"<div>
+  <div>
+    number 
+    &lt;=
+     
+    <b>
+      20
+    </b>
+  </div>
+  <div>
+    chance: 
+    <b>
+      20
+      %
+    </b>
+  </div>
+  <div>
+    payout: 
+    <b>
+      5
+      x
+    </b>
+  </div>
+</div>"
+`;

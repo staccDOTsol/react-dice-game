@@ -2,6 +2,7 @@ import deepFreeze from 'deep-freeze';
 
 import balanceReducer from '../balance';
 import * as balanceActions from '../../actions/balance';
+import * as diceGameActions from '../../actions/diceGame';
 import { DEFAULT_BALANCE } from '../../constants/balance';
 
 
@@ -16,22 +17,13 @@ describe('balance reducer', () => {
     ).toEqual(state);
   });
 
-  describe('SET_BALANCE', () => {
-    it('should not change balance value', () => {
-      const value = -1;
-
-      expect(balanceReducer(
-        deepFreeze(state),
-        balanceActions.setBalance(value)
-      )).toEqual(state);
-    });
-
+  describe('MAKE_BET_SUCCESS', () => {
     it('should change balance value', () => {
       const value = 1;
 
       expect(balanceReducer(
         deepFreeze(state),
-        balanceActions.setBalance(value)
+        diceGameActions.makeBetSuccess(null, null, value)
       )).toEqual({
         ...state,
         value,

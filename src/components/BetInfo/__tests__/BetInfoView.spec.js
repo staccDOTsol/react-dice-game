@@ -1,17 +1,19 @@
 import { getShallowWrapper } from '../../../utils/testUtils';
-import ProbablyFairHashView from '../views/ProbablyFairHashView';
+import BetInfoView from '../views/BetInfoView';
 
 
-describe('ProbablyFairHashView', () => {
+describe('BetInfoView', () => {
   let props;
   let wrapper;
 
   beforeAll(() => {
     props = {
-      resultNumber: 50,
+      betNumber: 20,
+      sign: '<=',
+      chance: 20,
+      payout: 5,
     };
-
-    wrapper = getShallowWrapper(ProbablyFairHashView, props);
+    wrapper = getShallowWrapper(BetInfoView, props);
   });
 
   describe('render', () => {

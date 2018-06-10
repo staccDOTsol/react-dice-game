@@ -5,10 +5,10 @@ import md5 from 'md5';
 import { ProbablyFairHashViewPropType } from '../propTypes';
 
 
-function ProbablyFairHashView({ nexBetNumber }) {
+function ProbablyFairHashView({ resultNumber }) {
   return (
     <FormGroup>
-      Provably Fair Hash: <b>{md5(nexBetNumber)}</b>
+      Provably Fair Hash: <b>{md5(resultNumber)}</b>
     </FormGroup>
   );
 }

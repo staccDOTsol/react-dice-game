@@ -1,2 +1,3 @@
 export const SET_BET_AMOUNT = 'SET_BET_AMOUNT';
 export const SET_BET_NUMBER = 'SET_BET_NUMBER';
+export const MAKE_BET_SUCCESS = 'MAKE_BET_SUCCESS';

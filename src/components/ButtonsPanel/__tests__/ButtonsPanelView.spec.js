@@ -1,17 +1,12 @@
 import { getShallowWrapper } from '../../../utils/testUtils';
-import ProbablyFairHashView from '../views/ProbablyFairHashView';
+import ButtonsPanelView from '../views/ButtonsPanelView';
 
 
-describe('ProbablyFairHashView', () => {
-  let props;
+describe('ButtonsPanelView', () => {
   let wrapper;
 
   beforeAll(() => {
-    props = {
-      resultNumber: 50,
-    };
-
-    wrapper = getShallowWrapper(ProbablyFairHashView, props);
+    wrapper = getShallowWrapper(ButtonsPanelView);
   });
 
   describe('render', () => {

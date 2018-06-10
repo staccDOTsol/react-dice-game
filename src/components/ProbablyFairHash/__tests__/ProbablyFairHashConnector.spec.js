@@ -16,7 +16,7 @@ describe('ProbablyFairHashConnector', () => {
   beforeAll(() => {
     initialState = {
       diceGame: {
-        nexBetNumber: 50,
+        resultNumber: 50,
       },
     };
 
@@ -35,7 +35,7 @@ describe('ProbablyFairHashConnector', () => {
   describe('props', () => {
     describe('nexBetNumber', () => {
       it('should pass nexBetNumber', () => {
-        expect(wrapper.prop('nexBetNumber')).toEqual(initialState.diceGame.nexBetNumber);
+        expect(wrapper.prop('resultNumber')).toEqual(initialState.diceGame.resultNumber);
       });
     });
   });

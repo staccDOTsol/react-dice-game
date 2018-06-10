@@ -14,7 +14,7 @@ function App() {
       <Balance />
       <BetAmount />
       <BetNumber />
-      <ButtonsPanel number={40} />
+      <ButtonsPanel />
       <ProbablyFairHash />
       <Alert color="success">64 WIN</Alert>
     </Container>

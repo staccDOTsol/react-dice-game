@@ -1,4 +1,4 @@
-import { BetButtonControlView } from './views';
+import { BetButtonControlConnector } from './connectors';
 
 
-export default BetButtonControlView;
+export default BetButtonControlConnector;

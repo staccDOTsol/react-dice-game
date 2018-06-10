@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
-export const BetButtonControlViewPropType = {
-  number: PropTypes.number.isRequired,
-  isBetLow: PropTypes.bool,
+export const BetButtonControlContainerPropType = {
+  balance: PropTypes.number,
+  betNumber: PropTypes.number,
+  betAmount: PropTypes.number,
+  betType: PropTypes.oneOf(['low', 'high']).isRequired,
 };
