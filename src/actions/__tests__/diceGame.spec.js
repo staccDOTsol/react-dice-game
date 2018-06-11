@@ -38,14 +38,6 @@ describe('diceGame actions', () => {
   });
 
   describe('makeBet', () => {
-    const getState = jest.fn(() => ({
-      balance: { value: 100 },
-      diceGame: {
-        betAmount: 20,
-        betNumber: 20,
-        resultNumber: 40,
-      },
-    }));
     const dispatch = jest.fn();
 
     afterEach(() => {
