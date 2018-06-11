@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppView render should display correct 1`] = `
+"<Container tag=\\"div\\">
+  <Connect(BalanceContainer) />
+  <Connect(BetAmountContainer) />
+  <Connect(BetNumberContainer) />
+  <ButtonsPanelView />
+  <Connect(ProbablyFairHashView) />
+  <Connect(ResultAreaView) />
+</Container>"
+`;
