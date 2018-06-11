@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultAreaView render should display root element 1`] = `
+"<Alert color=\\"success\\" isOpen={true} tag=\\"div\\" closeAriaLabel=\\"Close\\" transition={{...}}>
+  50
+   
+  WIN
+</Alert>"
+`;

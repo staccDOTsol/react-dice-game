@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Alert } from 'reactstrap';
+import { Container } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Balance from '../Balance';
@@ -7,6 +7,7 @@ import BetAmount from '../BetAmount';
 import BetNumber from '../BetNumber';
 import ButtonsPanel from '../ButtonsPanel';
 import ProbablyFairHash from '../ProbablyFairHash';
+import ResultArea from '../ResultArea';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <BetNumber />
       <ButtonsPanel />
       <ProbablyFairHash />
-      <Alert color="success">64 WIN</Alert>
+      <ResultArea />
     </Container>
   );
 }

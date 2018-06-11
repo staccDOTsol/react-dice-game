@@ -33,8 +33,8 @@ describe('ProbablyFairHashConnector', () => {
   });
 
   describe('props', () => {
-    describe('nexBetNumber', () => {
-      it('should pass nexBetNumber', () => {
+    describe('resultNumber', () => {
+      it('should pass resultNumber', () => {
         expect(wrapper.prop('resultNumber')).toEqual(initialState.diceGame.resultNumber);
       });
     });
