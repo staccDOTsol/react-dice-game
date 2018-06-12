@@ -16,8 +16,7 @@ describe('BetButtonControlContainer', () => {
       betNumber: 20,
       betAmount: 10,
       balance: 100,
-      autoBet: false,
-      numberOfBets: 10,
+      balance: 100,
       makeBets: jest.fn(),
     };
 
@@ -99,22 +98,11 @@ describe('BetButtonControlContainer', () => {
 
   describe('methods', () => {
     describe('handleClick', () => {
-      it('should call makeBets for 1 bet', () => {
-        wrapper.setProps({ ...props, autoBet: false });
-
+      it('should call makeBets', () => {
         instance.handleClick();
 
         expect(props.makeBets).toHaveBeenCalledTimes(1);
-        expect(props.makeBets).toHaveBeenCalledWith(props.betType, wrapper.state('payout'), 1);
-      });
-
-      it('should call makeBets for "numberOfBets" bets', () => {
-        wrapper.setProps({ ...props, autoBet: true});
-
-        instance.handleClick();
-
-        expect(props.makeBets).toHaveBeenCalledTimes(1);
-        expect(props.makeBets).toHaveBeenCalledWith(props.betType, wrapper.state('payout'), props.numberOfBets);
+        expect(props.makeBets).toHaveBeenCalledWith(props.betType, wrapper.state('payout'));
       });
     });
   });

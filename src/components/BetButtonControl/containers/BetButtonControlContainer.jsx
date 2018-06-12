@@ -25,14 +25,9 @@ class BetButtonControlContainer extends Component {
   }
 
   handleClick = () => {
-    const {
-      betType,
-      makeBets,
-      autoBet,
-      numberOfBets,
-    } = this.props;
+    const { betType, makeBets } = this.props;
 
-    makeBets(betType, this.state.payout, autoBet ? numberOfBets : 1);
+    makeBets(betType, this.state.payout);
   }
 
   render() {

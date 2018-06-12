@@ -18,8 +18,6 @@ describe('BetButtonControlConnector', () => {
       balance: 0,
       betAmount: 20,
       betNumber: 20,
-      autoBet: false,
-      numberOfBets: 1,
       duringBettingProcess: false,
     };
 
@@ -51,18 +49,6 @@ describe('BetButtonControlConnector', () => {
     describe('betNumber', () => {
       it('should pass betNumber', () => {
         expect(wrapper.prop('betNumber')).toEqual(initialState.betNumber);
-      });
-    });
-
-    describe('autoBet', () => {
-      it('should pass autoBet', () => {
-        expect(wrapper.prop('autoBet')).toEqual(initialState.autoBet);
-      });
-    });
-
-    describe('numberOfBets', () => {
-      it('should pass numberOfBets', () => {
-        expect(wrapper.prop('numberOfBets')).toEqual(initialState.numberOfBets);
       });
     });
 

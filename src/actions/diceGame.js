@@ -8,6 +8,7 @@ import {
   SET_NUMBER_OF_BETS,
   SET_AUTO_BET,
   GET_FREE_CREDITS,
+  SET_MARTINGALE_STRATEGY,
 } from '../actionTypes/diceGame';
 import { getBetNumber } from '../utils';
 
@@ -67,18 +68,24 @@ export function finishMakeBets({
   };
 }
 
-export function makeBets(betType, payout, numberOfBets) {
+export function makeBets(betType, payout) {
   return function (dispatch, getState) {
     const state = getState();
-    const { betAmount, betNumber } = state;
-    let { resultNumber, balance } = state;
+    const {
+      betNumber,
+      autoBet,
+      numberOfBets,
+      martingaleStrategy,
+    } = state;
+    let { betAmount, resultNumber, balance } = state;
     let win;
     let prevResultNumber;
+    const realNumberOfBets = autoBet ? numberOfBets : 1;
     const history = [];
 
     dispatch(startMakeBets());
 
-    for (let i = 0; i < numberOfBets; i++) {
+    for (let i = 0; i < realNumberOfBets; i++) {
       if (betAmount > balance) {
         break;
       }
@@ -86,7 +93,7 @@ export function makeBets(betType, payout, numberOfBets) {
       win = betType === 'low' ? resultNumber <= betNumber : resultNumber >= betNumber;
       balance = win ? balance + (betAmount * (payout - 1)) : balance - betAmount;
 
-      if (numberOfBets > 1) {
+      if (autoBet) {
         history.push({
           win,
           betAmount,
@@ -94,6 +101,10 @@ export function makeBets(betType, payout, numberOfBets) {
           betNumber: i + 1,
           balance: roundTo(balance, 2),
         });
+      }
+
+      if (!win && autoBet && martingaleStrategy) {
+        betAmount *= 2;
       }
 
       prevResultNumber = resultNumber;
@@ -107,5 +118,12 @@ export function makeBets(betType, payout, numberOfBets) {
       balance,
       history,
     }));
+  };
+}
+
+export function setMartingaleStrategy(martingaleStrategy) {
+  return {
+    type: SET_MARTINGALE_STRATEGY,
+    payload: { martingaleStrategy },
   };
 }

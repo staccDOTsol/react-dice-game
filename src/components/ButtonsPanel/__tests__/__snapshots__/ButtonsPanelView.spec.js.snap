@@ -8,6 +8,7 @@ exports[`ButtonsPanelView render should display correct 1`] = `
   </FormGroup>
   <FormGroup tag=\\"div\\">
     <Connect(AutoBetCheckBoxContainer) />
+    <Connect(MartingaleStrategyCheckBoxContainer) />
   </FormGroup>
 </div>"
 `;

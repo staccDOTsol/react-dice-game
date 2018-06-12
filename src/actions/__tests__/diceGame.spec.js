@@ -59,7 +59,7 @@ describe('diceGame actions', () => {
           resultNumber: 10,
         }));
         const payout = 5;
-        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const thunk = diceGameActions.makeBets(betType, payout);
         const expectedPayload = {
           win: true,
           prevResultNumber: 10,
@@ -84,7 +84,7 @@ describe('diceGame actions', () => {
           resultNumber: 40,
         }));
         const payout = 5;
-        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const thunk = diceGameActions.makeBets(betType, payout);
         const expectedPayload = {
           win: false,
           prevResultNumber: 40,
@@ -113,7 +113,7 @@ describe('diceGame actions', () => {
           resultNumber: 40,
         }));
         const payout = 1.25;
-        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const thunk = diceGameActions.makeBets(betType, payout);
         const expectedPayload = {
           win: true,
           prevResultNumber: 40,
@@ -138,7 +138,7 @@ describe('diceGame actions', () => {
           resultNumber: 10,
         }));
         const payout = 1.25;
-        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const thunk = diceGameActions.makeBets(betType, payout);
         const expectedPayload = {
           win: false,
           prevResultNumber: 10,
@@ -160,6 +160,15 @@ describe('diceGame actions', () => {
   it('should create an action to get free credits', () => {
     expect(diceGameActions.getFreeCredits()).toEqual({
       type: diceGameActionTypes.GET_FREE_CREDITS,
+    });
+  });
+
+  it('should create an action to set Martingale strategy', () => {
+    const martingaleStrategy = true;
+
+    expect(diceGameActions.setMartingaleStrategy(martingaleStrategy)).toEqual({
+      type: diceGameActionTypes.SET_MARTINGALE_STRATEGY,
+      payload: { martingaleStrategy },
     });
   });
 });

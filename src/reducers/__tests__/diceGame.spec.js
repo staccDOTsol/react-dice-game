@@ -125,4 +125,18 @@ describe('diceGame reducer', () => {
       });
     });
   });
+
+  describe('SET_MARTINGALE_STRATEGY', () => {
+    it('should set Martingale strategy', () => {
+      const martingaleStrategy = true;
+
+      expect(diceGameReducer(
+        deepFreeze(initialState),
+        diceGameActions.setMartingaleStrategy(martingaleStrategy)
+      )).toEqual({
+        ...initialState,
+        martingaleStrategy,
+      });
+    });
+  });
 });

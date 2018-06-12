@@ -8,15 +8,11 @@ const mapStateToProps = ({
   balance,
   betAmount,
   betNumber,
-  autoBet,
-  numberOfBets,
   duringBettingProcess,
 }) => ({
   balance,
   betAmount,
   betNumber,
-  autoBet,
-  numberOfBets,
   duringBettingProcess,
 });
 

@@ -6,6 +6,7 @@ import {
   SET_NUMBER_OF_BETS,
   SET_AUTO_BET,
   GET_FREE_CREDITS,
+  SET_MARTINGALE_STRATEGY,
 } from '../actionTypes/diceGame';
 import { getBetNumber } from '../utils';
 import { DEFAULT_BALANCE } from '../constants/diceGame';
@@ -14,11 +15,12 @@ const initialState = {
   balance: Number(localStorage.getItem('balance')) || DEFAULT_BALANCE,
   betAmount: null,
   betNumber: null,
+  numberOfBets: null,
   resultNumber: getBetNumber(),
   prevResultNumber: null,
   win: false,
-  numberOfBets: null,
   autoBet: false,
+  martingaleStrategy: false,
   history: [],
   duringBettingProcess: false,
 };
@@ -48,6 +50,8 @@ export default function diceGameReducer(state = initialState, { type, payload })
       return { ...state, autoBet: payload.autoBet };
     case GET_FREE_CREDITS:
       return { ...state, balance: DEFAULT_BALANCE };
+    case SET_MARTINGALE_STRATEGY:
+      return { ...state, martingaleStrategy: payload.martingaleStrategy };
     default:
       return state;
   }
