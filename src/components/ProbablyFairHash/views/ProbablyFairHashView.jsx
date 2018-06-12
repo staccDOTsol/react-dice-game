@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormGroup } from 'reactstrap';
-import md5 from 'md5';
+import md5 from 'blueimp-md5';
 
 import { ProbablyFairHashViewPropType } from '../propTypes';
 

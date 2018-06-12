@@ -9,7 +9,7 @@ describe('BalanceView', () => {
 
     beforeAll(() => {
       props = {
-        value: 10,
+        balance: 10,
         onButtonClick: jest.fn(),
       };
 
@@ -27,7 +27,7 @@ describe('BalanceView', () => {
 
     beforeAll(() => {
       props = {
-        value: 0,
+        balance: 0,
         onButtonClick: jest.fn(),
       };
 

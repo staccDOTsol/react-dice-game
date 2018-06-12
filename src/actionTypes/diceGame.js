@@ -1,3 +1,9 @@
+export const START_MAKE_BETS = 'START_MAKE_BETS';
+export const FINISH_MAKE_BETS = 'FINISH_MAKE_BETS';
+
 export const SET_BET_AMOUNT = 'SET_BET_AMOUNT';
 export const SET_BET_NUMBER = 'SET_BET_NUMBER';
-export const MAKE_BET_SUCCESS = 'MAKE_BET_SUCCESS';
+export const SET_NUMBER_OF_BETS = 'SET_NUMBER_OF_BETS';
+export const SET_AUTO_BET = 'SET_AUTO_BET';
+
+export const GET_FREE_CREDITS = 'GET_FREE_CREDITS';

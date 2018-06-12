@@ -15,13 +15,12 @@ describe('BetButtonControlConnector', () => {
 
   beforeAll(() => {
     initialState = {
-      balance: {
-        value: 0,
-      },
-      diceGame: {
-        betAmount: 20,
-        betNumber: 20,
-      },
+      balance: 0,
+      betAmount: 20,
+      betNumber: 20,
+      autoBet: false,
+      numberOfBets: 1,
+      duringBettingProcess: false,
     };
 
     const mockStore = configureStore([]);
@@ -37,27 +36,45 @@ describe('BetButtonControlConnector', () => {
   });
 
   describe('props', () => {
-    describe('value', () => {
-      it('should pass value', () => {
-        expect(wrapper.prop('balance')).toEqual(initialState.balance.value);
+    describe('balance', () => {
+      it('should pass balance', () => {
+        expect(wrapper.prop('balance')).toEqual(initialState.balance);
       });
     });
 
     describe('betAmount', () => {
       it('should pass betAmount', () => {
-        expect(wrapper.prop('betAmount')).toEqual(initialState.diceGame.betAmount);
+        expect(wrapper.prop('betAmount')).toEqual(initialState.betAmount);
       });
     });
 
     describe('betNumber', () => {
       it('should pass betNumber', () => {
-        expect(wrapper.prop('betNumber')).toEqual(initialState.diceGame.betNumber);
+        expect(wrapper.prop('betNumber')).toEqual(initialState.betNumber);
       });
     });
 
-    describe('makeBet', () => {
-      it('should pass makeBet', () => {
-        expect(wrapper.prop('makeBet')).toEqual(expect.any(Function));
+    describe('autoBet', () => {
+      it('should pass autoBet', () => {
+        expect(wrapper.prop('autoBet')).toEqual(initialState.autoBet);
+      });
+    });
+
+    describe('numberOfBets', () => {
+      it('should pass numberOfBets', () => {
+        expect(wrapper.prop('numberOfBets')).toEqual(initialState.numberOfBets);
+      });
+    });
+
+    describe('duringBettingProcess', () => {
+      it('should pass duringBettingProcess', () => {
+        expect(wrapper.prop('duringBettingProcess')).toEqual(initialState.duringBettingProcess);
+      });
+    });
+
+    describe('makeBets', () => {
+      it('should pass makeBets', () => {
+        expect(wrapper.prop('makeBets')).toEqual(expect.any(Function));
       });
     });
   });

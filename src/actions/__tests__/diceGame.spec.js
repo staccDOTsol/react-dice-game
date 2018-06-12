@@ -27,17 +27,21 @@ describe('diceGame actions', () => {
   });
 
   it('should create an action to complete the bet', () => {
-    const win = true;
-    const resultNumber = 50;
-    const balance = 50;
+    const payload = {
+      win: true,
+      prevResultNumber: 50,
+      resultNumber: 60,
+      history: [],
+      balance: 50,
+    };
 
-    expect(diceGameActions.makeBetSuccess(win, resultNumber, balance)).toEqual({
-      type: diceGameActionTypes.MAKE_BET_SUCCESS,
-      payload: { win, resultNumber, balance },
+    expect(diceGameActions.finishMakeBets(payload)).toEqual({
+      type: diceGameActionTypes.FINISH_MAKE_BETS,
+      payload,
     });
   });
 
-  describe('makeBet', () => {
+  describe('makeBets', () => {
     const dispatch = jest.fn();
 
     afterEach(() => {
@@ -49,48 +53,52 @@ describe('diceGame actions', () => {
 
       it('should win a move', () => {
         const getState = jest.fn(() => ({
-          balance: { value: 100 },
-          diceGame: {
-            betAmount: 20,
-            betNumber: 20,
-            resultNumber: 10,
-          },
+          balance: 100,
+          betAmount: 20,
+          betNumber: 20,
+          resultNumber: 10,
         }));
         const payout = 5;
-        const thunk = diceGameActions.makeBet(betType, payout);
-        const expectedWin = true;
-        const expectedResultNumber = 50;
-        const expectedBalance = 180;
+        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const expectedPayload = {
+          win: true,
+          prevResultNumber: 10,
+          resultNumber: 50,
+          history: [],
+          balance: 180,
+        };
 
         thunk(dispatch, getState);
 
-        expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenCalledWith(
-          diceGameActions.makeBetSuccess(expectedWin, expectedResultNumber, expectedBalance)
-        );
+        expect(dispatch.mock.calls).toEqual([
+          [ diceGameActions.startMakeBets() ],
+          [ diceGameActions.finishMakeBets(expectedPayload) ],
+        ]);
       });
 
       it('should lose a move', () => {
         const getState = jest.fn(() => ({
-          balance: { value: 100 },
-          diceGame: {
-            betAmount: 20,
-            betNumber: 20,
-            resultNumber: 40,
-          },
+          balance: 100,
+          betAmount: 20,
+          betNumber: 20,
+          resultNumber: 40,
         }));
         const payout = 5;
-        const thunk = diceGameActions.makeBet(betType, payout);
-        const expectedWin = false;
-        const expectedResultNumber = 50;
-        const expectedBalance = 80;
+        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const expectedPayload = {
+          win: false,
+          prevResultNumber: 40,
+          resultNumber: 50,
+          history: [],
+          balance: 80,
+        };
 
         thunk(dispatch, getState);
 
-        expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenCalledWith(
-          diceGameActions.makeBetSuccess(expectedWin, expectedResultNumber, expectedBalance)
-        );
+        expect(dispatch.mock.calls).toEqual([
+          [ diceGameActions.startMakeBets() ],
+          [ diceGameActions.finishMakeBets(expectedPayload) ],
+        ]);
       });
     });
 
@@ -99,49 +107,59 @@ describe('diceGame actions', () => {
 
       it('should win a move', () => {
         const getState = jest.fn(() => ({
-          balance: { value: 100 },
-          diceGame: {
-            betAmount: 20,
-            betNumber: 20,
-            resultNumber: 40,
-          },
+          balance: 100,
+          betAmount: 20,
+          betNumber: 20,
+          resultNumber: 40,
         }));
         const payout = 1.25;
-        const thunk = diceGameActions.makeBet(betType, payout);
-        const expectedWin = true;
-        const expectedResultNumber = 50;
-        const expectedBalance = 105;
+        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const expectedPayload = {
+          win: true,
+          prevResultNumber: 40,
+          resultNumber: 50,
+          history: [],
+          balance: 105,
+        };
 
         thunk(dispatch, getState);
 
-        expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenCalledWith(
-          diceGameActions.makeBetSuccess(expectedWin, expectedResultNumber, expectedBalance)
-        );
+        expect(dispatch.mock.calls).toEqual([
+          [ diceGameActions.startMakeBets() ],
+          [ diceGameActions.finishMakeBets(expectedPayload) ],
+        ]);
       });
 
       it('should lose a move', () => {
         const getState = jest.fn(() => ({
-          balance: { value: 100 },
-          diceGame: {
-            betAmount: 20,
-            betNumber: 20,
-            resultNumber: 10,
-          },
+          balance: 100,
+          betAmount: 20,
+          betNumber: 20,
+          resultNumber: 10,
         }));
         const payout = 1.25;
-        const thunk = diceGameActions.makeBet(betType, payout);
-        const expectedWin = false;
-        const expectedResultNumber = 50;
-        const expectedBalance = 80;
+        const thunk = diceGameActions.makeBets(betType, payout, 1);
+        const expectedPayload = {
+          win: false,
+          prevResultNumber: 10,
+          resultNumber: 50,
+          history: [],
+          balance: 80,
+        };
 
         thunk(dispatch, getState);
 
-        expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenCalledWith(
-          diceGameActions.makeBetSuccess(expectedWin, expectedResultNumber, expectedBalance)
-        );
+        expect(dispatch.mock.calls).toEqual([
+          [ diceGameActions.startMakeBets() ],
+          [ diceGameActions.finishMakeBets(expectedPayload) ],
+        ]);
       });
+    });
+  });
+
+  it('should create an action to get free credits', () => {
+    expect(diceGameActions.getFreeCredits()).toEqual({
+      type: diceGameActionTypes.GET_FREE_CREDITS,
     });
   });
 });

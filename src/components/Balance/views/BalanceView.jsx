@@ -12,17 +12,17 @@ import {
 import { BalanceViewPropType } from '../propTypes';
 
 
-function BalanceView({ value, onButtonClick }) {
+function BalanceView({ balance, onButtonClick }) {
   return (
     <FormGroup row>
       <Label sm="3" md="2">Balance</Label>
       <Col>
         <InputGroup>
-          <Input disabled value={value} />
+          <Input disabled value={balance} />
           <InputGroupAddon addonType="append">
             <Button
               onClick={onButtonClick}
-              disabled={value > 0}
+              disabled={balance > 0}
             >
               Free Credits
             </Button>

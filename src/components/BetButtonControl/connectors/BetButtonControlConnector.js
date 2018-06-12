@@ -1,20 +1,27 @@
 import { connect } from 'react-redux';
 
 import { BetButtonControlContainer } from '../containers';
-import { makeBet } from '../../../actions/diceGame';
+import { makeBets } from '../../../actions/diceGame';
 
 
 const mapStateToProps = ({
-  balance: { value },
-  diceGame: { betAmount, betNumber },
-}) => ({
-  balance: value,
+  balance,
   betAmount,
   betNumber,
+  autoBet,
+  numberOfBets,
+  duringBettingProcess,
+}) => ({
+  balance,
+  betAmount,
+  betNumber,
+  autoBet,
+  numberOfBets,
+  duringBettingProcess,
 });
 
 const mapDispatchToProps = {
-  makeBet,
+  makeBets,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BetButtonControlContainer);

@@ -5,4 +5,6 @@ export const BetButtonControlContainerPropType = {
   betNumber: PropTypes.number,
   betAmount: PropTypes.number,
   betType: PropTypes.oneOf(['low', 'high']).isRequired,
+  numberOfBets: PropTypes.number,
+  autoBet: PropTypes.bool,
 };

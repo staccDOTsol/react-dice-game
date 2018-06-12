@@ -15,10 +15,8 @@ describe('ResultAreaConnector', () => {
 
   beforeAll(() => {
     initialState = {
-      diceGame: {
-        prevResultNumber: 50,
-        win: true,
-      },
+      prevResultNumber: 50,
+      win: true,
     };
 
     const mockStore = configureStore([]);
@@ -36,13 +34,13 @@ describe('ResultAreaConnector', () => {
   describe('props', () => {
     describe('resultNumber', () => {
       it('should pass resultNumber', () => {
-        expect(wrapper.prop('resultNumber')).toEqual(initialState.diceGame.prevResultNumber);
+        expect(wrapper.prop('resultNumber')).toEqual(initialState.prevResultNumber);
       });
     });
 
     describe('win', () => {
       it('should pass win', () => {
-        expect(wrapper.prop('win')).toEqual(initialState.diceGame.win);
+        expect(wrapper.prop('win')).toEqual(initialState.win);
       });
     });
   });

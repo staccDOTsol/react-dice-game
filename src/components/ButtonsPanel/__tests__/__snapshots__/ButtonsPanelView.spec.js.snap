@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonsPanelView render should display correct 1`] = `
-"<FormGroup row={true} tag=\\"div\\">
-  <Connect(BetButtonControlContainer) betType=\\"high\\" />
-  <Connect(BetButtonControlContainer) betType=\\"low\\" />
-</FormGroup>"
+"<div>
+  <FormGroup row={true} tag=\\"div\\">
+    <Connect(BetButtonControlContainer) betType=\\"high\\" />
+    <Connect(BetButtonControlContainer) betType=\\"low\\" />
+  </FormGroup>
+  <FormGroup tag=\\"div\\">
+    <Connect(AutoBetCheckBoxContainer) />
+  </FormGroup>
+</div>"
 `;

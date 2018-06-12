@@ -11,7 +11,7 @@ class BalanceContainer extends Component {
 
   render() {
     return (
-      <BalanceView value={this.props.value} onButtonClick={this.handleButtonClick} />
+      <BalanceView balance={this.props.balance} onButtonClick={this.handleButtonClick} />
     );
   }
 }

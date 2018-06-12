@@ -2,11 +2,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import reducer from './reducers';
-import { getPreloadedState, saveState } from './utils';
+import { saveState } from './utils';
 
 const store = createStore(
   reducer,
-  getPreloadedState(),
+  // getPreloadedState(),
   compose(
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

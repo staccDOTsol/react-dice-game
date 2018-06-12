@@ -5,8 +5,10 @@ exports[`AppView render should display correct 1`] = `
   <Connect(BalanceContainer) />
   <Connect(BetAmountContainer) />
   <Connect(BetNumberContainer) />
+  <Connect(NumberOfBetsContainer) />
   <ButtonsPanelView />
   <Connect(ProbablyFairHashView) />
   <Connect(ResultAreaView) />
+  <Connect(TableView) />
 </Container>"
 `;

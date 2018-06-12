@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoBetCheckBoxContainer render should display the disabled checkbox 1`] = `"<CheckBoxControlView label=\\"Auto Bet\\" onChange={[Function]} disabled={true} />"`;
+
+exports[`AutoBetCheckBoxContainer render should display the enabled checkbox 1`] = `"<CheckBoxControlView label=\\"Auto Bet\\" onChange={[Function]} disabled={false} />"`;

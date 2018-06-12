@@ -7,14 +7,14 @@ jest.mock('../views', () => ({
   BalanceView: () => null
 }));
 
-describe('FullScreenButtonContainer', () => {
+describe('BalanceContainer', () => {
   let props;
   let wrapper;
   let instance;
 
   beforeAll(() => {
     props = {
-      value: 0,
+      balance: 0,
       getFreeCredits: jest.fn(),
     };
 
@@ -28,9 +28,9 @@ describe('FullScreenButtonContainer', () => {
     });
 
     describe('props', () => {
-      describe('value', () => {
+      describe('balance', () => {
         it('should taken from parent component props', () => {
-          expect(wrapper.prop('value')).toBe(props.value);
+          expect(wrapper.prop('balance')).toBe(props.balance);
         });
       });
 
@@ -49,7 +49,7 @@ describe('FullScreenButtonContainer', () => {
 
     beforeEach(() => {
       props = {
-        value: 0,
+        balance: 0,
         getFreeCredits: jest.fn(),
       };
       wrapper = getShallowWrapper(BalanceContainer, props);

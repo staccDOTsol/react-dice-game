@@ -15,9 +15,7 @@ describe('BalanceConnector', () => {
 
   beforeAll(() => {
     initialState = {
-      balance: {
-        value: 0,
-      },
+      balance: 0,
     };
 
     const mockStore = configureStore([]);
@@ -33,9 +31,9 @@ describe('BalanceConnector', () => {
   });
 
   describe('props', () => {
-    describe('value', () => {
-      it('should pass value', () => {
-        expect(wrapper.prop('value')).toEqual(initialState.balance.value);
+    describe('balance', () => {
+      it('should pass balance', () => {
+        expect(wrapper.prop('balance')).toEqual(initialState.balance);
       });
     });
 

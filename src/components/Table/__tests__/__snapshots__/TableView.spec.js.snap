@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableView render should display TableView 1`] = `
+"<Table striped={true} tag=\\"table\\" responsiveTag=\\"div\\">
+  <thead>
+    <tr>
+      <th>
+        Bet number
+      </th>
+      <th>
+        Bet amount
+      </th>
+      <th>
+        Result
+      </th>
+      <th>
+        Probably Fair Hash
+      </th>
+      <th>
+        Balance
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope=\\"row\\">
+        1
+      </th>
+      <td>
+        10
+      </td>
+      <td>
+        10
+         
+        WIN
+      </td>
+      <td>
+        d3d9446802a44259755d38e6d163e820
+      </td>
+      <td>
+        100
+      </td>
+    </tr>
+  </tbody>
+</Table>"
+`;

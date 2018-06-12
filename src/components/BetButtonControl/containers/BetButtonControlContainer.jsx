@@ -25,9 +25,14 @@ class BetButtonControlContainer extends Component {
   }
 
   handleClick = () => {
-    const { betType, makeBet } = this.props;
+    const {
+      betType,
+      makeBets,
+      autoBet,
+      numberOfBets,
+    } = this.props;
 
-    makeBet(betType, this.state.payout);
+    makeBets(betType, this.state.payout, autoBet ? numberOfBets : 1);
   }
 
   render() {
@@ -36,16 +41,17 @@ class BetButtonControlContainer extends Component {
       betNumber,
       betAmount,
       balance,
+      duringBettingProcess,
     } = this.props;
     const { chance, payout } = this.state;
     const incorrectBetNumber = Number.isNaN(betNumber) || betNumber < MIN_BET_NUMBER || betNumber > MAX_BET_NUMBER;
-    const incorrectBetAmount = betAmount < MIN_BET_AMOUNT || betAmount > balance;
+    const incorrectBetAmount = Number.isNaN(betAmount) || betAmount < MIN_BET_AMOUNT || betAmount > balance;
 
     return (
       <Col>
         <Button
           color="primary"
-          disabled={incorrectBetNumber || incorrectBetAmount}
+          disabled={duringBettingProcess || incorrectBetNumber || incorrectBetAmount}
           onClick={this.handleClick}
           block
         >

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { ResultAreaView } from '../views';
 
 
-const mapStateToProps = ({ diceGame: { win, prevResultNumber } }) => ({
+const mapStateToProps = ({ win, prevResultNumber }) => ({
   win,
   resultNumber: prevResultNumber,
 });

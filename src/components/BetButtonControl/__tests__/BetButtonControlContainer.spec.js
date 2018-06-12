@@ -16,7 +16,9 @@ describe('BetButtonControlContainer', () => {
       betNumber: 20,
       betAmount: 10,
       balance: 100,
-      makeBet: jest.fn(),
+      autoBet: false,
+      numberOfBets: 10,
+      makeBets: jest.fn(),
     };
 
     wrapper = getShallowWrapper(BetButtonControlContainer, props);
@@ -51,18 +53,27 @@ describe('BetButtonControlContainer', () => {
         wrapper.setProps({ ...props, betNumber: 101 });
         expect(wrapper.find('Button').prop('disabled')).toBe(true);
 
+        wrapper.setProps({ ...props, betAmount: null });
+        expect(wrapper.find('Button').prop('disabled')).toBe(true);
+
         wrapper.setProps({ ...props, betAmount: 0 });
         expect(wrapper.find('Button').prop('disabled')).toBe(true);
 
         wrapper.setProps({ ...props, betAmount: 101, balance: 100 });
         expect(wrapper.find('Button').prop('disabled')).toBe(true);
+
+        wrapper.setProps({ ...props, duringBettingProcess: true });
+        expect(wrapper.find('Button').prop('disabled')).toBe(true);
       });
 
       it('should be enabled', () => {
-        wrapper.setProps({ ...props, betNumber: 10 });
-        expect(wrapper.find('Button').prop('disabled')).toBe(false);
-
-        wrapper.setProps({ ...props, betAmount: 90, balance: 100 });
+        wrapper.setProps({
+          ...props,
+          betNumber: 10,
+          betAmount: 10,
+          balance: 100,
+          duringBettingProcess: false,
+        });
         expect(wrapper.find('Button').prop('disabled')).toBe(false);
       });
     });
@@ -88,11 +99,22 @@ describe('BetButtonControlContainer', () => {
 
   describe('methods', () => {
     describe('handleClick', () => {
-      it('should call makeBet', () => {
+      it('should call makeBets for 1 bet', () => {
+        wrapper.setProps({ ...props, autoBet: false });
+
         instance.handleClick();
 
-        expect(props.makeBet).toHaveBeenCalledTimes(1);
-        expect(props.makeBet).toHaveBeenCalledWith(props.betType, wrapper.state('payout'));
+        expect(props.makeBets).toHaveBeenCalledTimes(1);
+        expect(props.makeBets).toHaveBeenCalledWith(props.betType, wrapper.state('payout'), 1);
+      });
+
+      it('should call makeBets for "numberOfBets" bets', () => {
+        wrapper.setProps({ ...props, autoBet: true});
+
+        instance.handleClick();
+
+        expect(props.makeBets).toHaveBeenCalledTimes(1);
+        expect(props.makeBets).toHaveBeenCalledWith(props.betType, wrapper.state('payout'), props.numberOfBets);
       });
     });
   });

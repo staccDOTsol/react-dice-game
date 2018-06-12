@@ -4,7 +4,7 @@ exports[`ProbablyFairHashView render should display correct 1`] = `
 "<FormGroup tag=\\"div\\">
   Provably Fair Hash: 
   <b>
-    4b402790848b9196b6771ad6cd44937b
+    c0c7c76d30bd3dcaefc96f40275bdc0a
   </b>
 </FormGroup>"
 `;

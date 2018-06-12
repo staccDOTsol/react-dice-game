@@ -8,6 +8,8 @@ import BetNumber from '../../BetNumber';
 import ButtonsPanel from '../../ButtonsPanel';
 import ProbablyFairHash from '../../ProbablyFairHash';
 import ResultArea from '../../ResultArea';
+import NumberOfBets from '../../NumberOfBets';
+import Table from '../../Table';
 
 function AppView() {
   return (
@@ -15,9 +17,11 @@ function AppView() {
       <Balance />
       <BetAmount />
       <BetNumber />
+      <NumberOfBets />
       <ButtonsPanel />
       <ProbablyFairHash />
       <ResultArea />
+      <Table />
     </Container>
   );
 }

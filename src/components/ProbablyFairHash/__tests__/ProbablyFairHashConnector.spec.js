@@ -15,9 +15,7 @@ describe('ProbablyFairHashConnector', () => {
 
   beforeAll(() => {
     initialState = {
-      diceGame: {
-        resultNumber: 50,
-      },
+      resultNumber: 50,
     };
 
     const mockStore = configureStore([]);
@@ -35,7 +33,7 @@ describe('ProbablyFairHashConnector', () => {
   describe('props', () => {
     describe('resultNumber', () => {
       it('should pass resultNumber', () => {
-        expect(wrapper.prop('resultNumber')).toEqual(initialState.diceGame.resultNumber);
+        expect(wrapper.prop('resultNumber')).toEqual(initialState.resultNumber);
       });
     });
   });
