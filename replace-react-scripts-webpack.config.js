@@ -298,7 +298,7 @@ module.exports = function (webpackEnv) {
       ],
     },
     resolve: {
-      fallback: { "assert": require.resolve("assert-browserify"), "stream": require.resolve("stream-browserify"), "Buffer": require.resolve("buffer") , "process": require.resolve("process/browser") },
+      fallback: { "assert": require.resolve("assert-browserify"), "stream": require.resolve("stream-browserify"), "buffer": require.resolve("buffer") , "process": require.resolve("process/browser") },
       fullySpecified: false,
       
       // This allows you to set a fallback for where webpack should look for modules.
@@ -326,7 +326,7 @@ module.exports = function (webpackEnv) {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
           'process': 'process/browser',
-          'Buffer': 'buffer'
+          'buffer': 'buffer'
         }),
         ...(modules.webpackAliases || {}),
       },
@@ -374,7 +374,15 @@ module.exports = function (webpackEnv) {
               //exclude: "C:\\Users\Jare\\react-dice-game\\node_modules",
             },
             {
-              test: /\.(js|mjs|jsx|ts|tsx)$/,
+              test: /\.ts|tsx$/,
+        use: ['ts-loader'],
+        resolve: {
+          fullySpecified: false
+        },
+      //exclude: "C:\\Users\Jare\\react-dice-game\\node_modules",s
+            },
+            {
+              test: /\.(js|mjs|jsx)$/,
               include: paths.appSrc,
               loader: require.resolve('babel-loader'),
               options: {
@@ -412,7 +420,7 @@ module.exports = function (webpackEnv) {
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
-                    require.resolve('react-refresh/babel'),
+                      require.resolve('react-refresh/babel')
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -631,10 +639,9 @@ module.exports = function (webpackEnv) {
     plugins: [
       new webpack.ProvidePlugin({
         process: 'process/browser',
-      }), 
-      new webpack.ProvidePlugin({
-        Buffer: 'buffer',
-      }), 
+      }), new webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer'],
+    }),
       new MiniCssExtractPlugin({"filename": '[name].bundle.css'}),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({

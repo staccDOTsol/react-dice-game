@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "react-scripts start --verbose",
-    "build": "webpack --mode production"
+    "build": "cp .\replace-react-scripts-webpack.config.js cp /node_modules/react-scripts/config/webpack.config.js ",
+    
   },
   "license": "ISC",
   "devDependencies": {
@@ -20,6 +21,7 @@
     "@babel/preset-react": "latest",
     "assert": "^2.0.0",
     "css-loader": "^6.5.1",
+    "gh-pages": "^3.2.3",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.4.0",

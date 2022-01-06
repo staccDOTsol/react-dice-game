@@ -54,6 +54,7 @@ export const AppView = () => {
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
+                    
                     <WalletMultiButton />
                     <WalletDisconnectButton />
                     <Container>
@@ -64,7 +65,17 @@ export const AppView = () => {
                         <ButtonsPanel />
                         <ProbablyFairHash />
                         <ResultArea />
+                        <div>Hi :) This is a work-in-progress that demonstrates the iterative possibilities on our closed-source Random Number Generator (RND). 
+                        < br /> The RNG is different than some others you might see on Solana, as it relies on truly random data which is verified as a system account, and a commit (along with your bet) and reveal mechanism,
+                        < br /> which is actually wrapped up by magic into a single-txn experience for the user. Note that our original coinflip POC at https://fair3d.me 
+                        < br /> is still functional - but here on $SOLRoll you'll see the RNG pick a random result 100-side die "_" 
+                        < br /> The OGs will understand the implication of mix-and-match strategies, but we'll start with a handy Martingale strat :)
+                        < br /> Anyways, at preset my rust program is facing some signer/writer privilege woes, but I thought y'all might like this sneak peek...
+                        < br /> Signed, 
+                        < br /> @STACCart
+                    </div>
                         <Table />
+
                         </Container>
                 </WalletModalProvider>
             </WalletProvider>

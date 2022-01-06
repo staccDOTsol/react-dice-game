@@ -1,0 +1,11 @@
+import { AnchorWallet } from "@solana/wallet-adapter-react";
+import { PublicKey } from "@solana/web3.js";
+import * as anchor from "@project-serum/anchor";
+export declare function loadHouseProgram(walletWrapper: AnchorWallet): Promise<anchor.Program<anchor.Idl>>;
+export declare function getHouse(author: PublicKey, operator: PublicKey): Promise<[PublicKey, number]>;
+export declare function getAuthorFeeAccount(house: PublicKey, author: PublicKey, operator: PublicKey): Promise<[PublicKey, number]>;
+export declare function getOperatorTreasuryAccount(house: PublicKey, author: PublicKey, operator: PublicKey): Promise<[PublicKey, number]>;
+export declare function getOperatorFeeAccount(house: PublicKey, author: PublicKey, operator: PublicKey): Promise<[PublicKey, number]>;
+export declare function getPlayerAccount(walletKeyPair: AnchorWallet, house: PublicKey, uuid: string): Promise<[PublicKey, number]>;
+export declare function sleep(ms: number): Promise<void>;
+export declare const getUnixTs: () => number;
