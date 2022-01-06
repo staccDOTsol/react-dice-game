@@ -4,7 +4,7 @@
   "description": "",
   "author": "Mikhail Russkikh",
   "engines": {
-    "node": "16.13.1",
+    "node": "14.x",
     "npm": "8.1.2"
   },
   "browser": {
