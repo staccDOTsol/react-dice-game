@@ -5,7 +5,6 @@ import {
   Col,
   InputGroup,
   Input,
-  InputGroupAddon,
   Button,
 } from 'reactstrap';
 
@@ -19,14 +18,14 @@ function BalanceView({ balance, onButtonClick }) {
       <Col>
         <InputGroup>
           <Input disabled value={balance} />
-          <InputGroupAddon addonType="append">
+          <InputGroup addonType="append">
             <Button
               onClick={onButtonClick}
               disabled={balance > 0}
             >
               Free Credits
             </Button>
-          </InputGroupAddon>
+          </InputGroup>
         </InputGroup>
       </Col>
     </FormGroup>

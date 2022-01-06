@@ -1,10 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+function recursiveIssuer(m) {
+  if (m.issuer) {
+    return recursiveIssuer(m.issuer);
+  } else if (m.name) {
+    return m.name;
+  } else {
+    return false;
+  }
+}
 
 module.exports = {
   devServer: {
-    publicPath: '/dist/',
+    static: '/',
     hot: true
   },
   entry: {
@@ -15,34 +24,30 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass', '.ts', '.tsx']
   },
   module: {
     rules: [
       {
+        test: /\.scss|sass$/,
+  use: ['style-loader', 'css-loader', 'sass-loader']
+
+      },
+      {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
-      }, {
-        test: /\.scss$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader"
-        }, {
-          loader: "sass-loader"
-        }]
-      }, {
-        enforce: 'pre',
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+
+      },
+      { 
+        test: /\.ts|tsx$/,
+        use: ['ts-loader']
+      },
+      {
         test: /\.js|jsx$/,
-        exclude: /node_modules/,
-        use: ['eslint-loader'],
-      }, {
-        test: /\.js|jsx$/,
-        loaders: ['babel-loader'],
-        exclude: /node_modules/
+        use: ['babel-loader']
       }, {
         test: /\.svg$/,
-        loaders: [
+        use: [
           'file-loader?name=[path][name].[ext]'
         ]
       }
@@ -52,7 +57,7 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new ExtractTextPlugin('[name].bundle.css'),
+    new MiniCssExtractPlugin({"filename": '[name].bundle.css'}),
     new webpack.HotModuleReplacementPlugin()
   ]
 };

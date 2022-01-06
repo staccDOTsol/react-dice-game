@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Button } from 'reactstrap';
-import roundTo from 'round-to';
+import { roundTo } from 'round-to';
 
 import BetInfo from '../../BetInfo';
 import { BetButtonControlContainerPropType } from '../propTypes';
