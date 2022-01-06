@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start --verbose",
-    "build": "cp ./replace-react-scripts-webpack.config.js cp /node_modules/react-scripts/config/webpack.config.js ",
+    "build": "cp ./replace-react-scripts-webpack.config.js cp /node_modules/react-scripts/config/webpack.config.js"
     
   },
   "license": "ISC",
