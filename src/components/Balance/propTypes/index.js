@@ -1,3 +1,4 @@
+import { useAnchorWallet } from '@solana/wallet-adapter-react';
 import PropTypes from 'prop-types';
 
 export const BalanceContainerPropType = {
@@ -9,3 +10,4 @@ export const BalanceViewPropType = {
   balance: PropTypes.number.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
+

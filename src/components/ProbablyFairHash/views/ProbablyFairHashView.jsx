@@ -8,11 +8,11 @@ import { ProbablyFairHashViewPropType } from '../propTypes';
 function ProbablyFairHashView({ resultNumber }) {
   return (
     <FormGroup>
-      Provably Fair Hash: <b>{md5(resultNumber)}</b>
+    
     </FormGroup>
   );
 }
-
+//  Provably Fair Hash: <b>{md5(resultNumber)}</b>
 ProbablyFairHashView.propTypes = ProbablyFairHashViewPropType;
 
 export default ProbablyFairHashView;

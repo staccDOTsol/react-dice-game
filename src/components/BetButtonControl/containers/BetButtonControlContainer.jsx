@@ -5,7 +5,7 @@ import { roundTo } from 'round-to';
 import BetInfo from '../../BetInfo';
 import { BetButtonControlContainerPropType } from '../propTypes';
 import { MAX_BET_NUMBER, MIN_BET_NUMBER, MIN_BET_AMOUNT } from '../../../constants/diceGame';
-
+import { balance } from "../../Balance"
 
 class BetButtonControlContainer extends Component {
   state = {
@@ -35,7 +35,6 @@ class BetButtonControlContainer extends Component {
       betType,
       betNumber,
       betAmount,
-      balance,
       duringBettingProcess,
     } = this.props;
     const { chance, payout } = this.state;

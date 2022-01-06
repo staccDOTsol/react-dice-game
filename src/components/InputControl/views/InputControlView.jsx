@@ -10,7 +10,10 @@ import { InputControlViewPropType } from '../propTypes';
 
 
 function handleKeyPress(event) {
-  if (!/^\d+$/.test(event.key)) {
+  if (event.key.toString().indexOf(".") != -1){
+
+  }
+  else if (!/^\d+$/.test(event.key)) {
     event.preventDefault();
   }
 }

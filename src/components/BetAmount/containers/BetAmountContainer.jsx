@@ -6,7 +6,12 @@ import { BetAmountContainerPropType } from '../propTypes';
 
 class BetAmountContainer extends Component {
   handleChange = ({ currentTarget: { value } }) => {
-    this.props.setBetAmount(parseInt(value, 10));
+    try{
+    this.props.setBetAmount(parseFloat(value));
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
   render() {

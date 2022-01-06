@@ -5,10 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="/dist/react-dice-game.bundle.css" type="text/css" />
+    <link rel="stylesheet" href="./react-dice-game.bundle.css" type="text/css" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
 </head>
 <body>
 <div id="app"></div>
-<script src="/dist/react-dice-game.bundle.js"></script>
+<script>
+    var head = document.getElementsByTagName('head')[0];
+var js = document.createElement("script");
+
+js.type = "text/javascript";
+
+let loaded = false;
+    setInterval(async function(){
+        if (!loaded){
+            const isSol = window.solana._publicKey
+            console.log(isSol)
+            if (isSol != null){
+                if (isSol._publicKey != null){
+                loaded = true;
+         
+    js.src = "./react-dice-game.bundle.js";
+
+head.appendChild(js);
+                }
+            }
+        }
+    }, 2000)
+</script>
 </body>
 </html>
