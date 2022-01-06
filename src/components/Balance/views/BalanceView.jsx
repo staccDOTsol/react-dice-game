@@ -11,9 +11,10 @@ import { web3 } from '@project-serum/anchor';
 const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST || "https://api.devnet.solana.com";
 const connection = new web3.Connection(rpcHost);
 export let balance;
+export let wallet;
 export const BalanceView = () => {
   let [balance, setBalance] = useState();
-  const wallet = useAnchorWallet();
+  wallet = useAnchorWallet();
   //const connection = useConnection();
   useEffect(() => {
     (async () => {

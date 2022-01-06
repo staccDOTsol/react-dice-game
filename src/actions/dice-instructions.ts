@@ -69,7 +69,7 @@ export const mintCoin = async (walletKeyPair: AnchorWallet, bet: number, bethigh
   const [newPuppetAccount, newPuppetAccountBump] = await getPlayerAccount(walletKeyPair, house, uuid!);
   const puppetMaster = await loadHouseProgram(walletKeyPair);
   const houseObj = await puppetMaster.account.house.fetch(house);
-  return puppetMaster.instruction.pullStrings(new anchor.BN(bet * 10 ** 9), {
+  return puppetMaster.instruction.pullStrings(new anchor.BN(bet * 10 ** 9), 1, bethigh, thenum,{
         accounts: {
           // @ts-ignore
           author: houseObj.author,

@@ -25,7 +25,7 @@ import Grid from '@mui/material/Grid';
 import {Button, FilledInput, FormControl, InputAdornment, InputLabel} from "@mui/material";
 import {v4 as uuidv4} from 'uuid';
 import axios from "axios";
-
+import { wallet } from '../components/Balance/views/BalanceView'
 const ConnectButton = styled(WalletDialogButton)``;
 const solConnection = new Connection("https://api.devnet.solana.com");
 // @ts-ignore
@@ -41,7 +41,7 @@ export const FEES = "fees";
 export const TREASURY = 'treasury';
 export const jare = "4tui4yfA6MNgLhjXmKBATrPvEUGseEeqQrqAyVHintUQ";
 export const author = new PublicKey(jare);
-export const house = new PublicKey("ASTu9TrWQGpD2MXMHrevCGQ9ygRbhKQFFWydTzn5pSvr8vFRNZkFUkQL693SzAZ2533f871WUP3RxkW9y6nLGP9L");
+export const house = new PublicKey("3bRzjK5nv4t3xQJEGEvPqkR5SPp45DDCX3Ziz7bFyWEz");
 
 
 export function getFreeCredits() {
@@ -98,13 +98,9 @@ export function finishMakeBets({
     },
   };
 }
-
+let localUuid = null;
 export function makeBets(betType, payout) {
   return async function (dispatch, getState) {
-    const wallet = useAnchorWallet();
-    const [uuid, setUuid] = useState<string | null>(null);
-    const [msg, setMsg] = useState<string>("");
-    const localUuid = uuidv4().slice(0, 8);
     
     
     const state = getState();
@@ -119,10 +115,11 @@ export function makeBets(betType, payout) {
     let prevResultNumber;
     const realNumberOfBets = autoBet ? numberOfBets : 1;
     const history = [];
-
+    let instructions = [];
     dispatch(startMakeBets());
-    if (uuid == null){
-      setUuid(localUuid);
+    if (localUuid == null){
+      localUuid = uuidv4().slice(0, 8);
+     
       instructions.push(await initializeCoin(wallet, house, localUuid));
       
       }
