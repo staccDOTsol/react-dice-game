@@ -8,5 +8,5 @@ export const FEES = "fees";
 export const TREASURY = 'treasury';
 export const jare = "4tui4yfA6MNgLhjXmKBATrPvEUGseEeqQrqAyVHintUQ";
 export const author = new PublicKey(jare);
-export const house = new PublicKey("3bRzjK5nv4t3xQJEGEvPqkR5SPp45DDCX3Ziz7bFyWEz");
+export const house = new PublicKey("CUk1bjhnXppSFMHyafjyejhC8TBx8Gbw1PAGGaQwK1mQ");
 export const DEFAULT_TIMEOUT = 30000;

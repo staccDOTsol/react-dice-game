@@ -15,9 +15,11 @@ class BetButtonControlContainer extends Component {
 
   static getDerivedStateFromProps(props) {
     const { betType, betNumber } = props;
-    const chance = betType === 'low' ? betNumber : MAX_BET_NUMBER - betNumber;
-    const payout = roundTo(MAX_BET_NUMBER / chance, 2);
-
+    const chance = betType === 'low' ? betNumber : (MAX_BET_NUMBER) - betNumber;
+    let payout = roundTo((MAX_BET_NUMBER) / chance, 2);
+    if (chance == 0){
+      payout = 0
+    }
     return {
       chance,
       payout,
@@ -54,7 +56,7 @@ class BetButtonControlContainer extends Component {
         { !incorrectBetNumber &&
           <BetInfo
             betNumber={betNumber}
-            sign={betType === 'low' ? '<=' : '>='}
+            sign={betType === 'low' ? '<=' : '>'}
             chance={chance}
             payout={payout}
           />

@@ -4,12 +4,14 @@ import { FormGroup, Label, Input } from 'reactstrap';
 import { CheckBoxControlViewPropType } from '../propTypes';
 
 
-function CheckBoxControlView({ label, onChange, disabled }) {
+function CheckBoxControlView({ label, onChange, disabled, id, checked }) {
   return (
     <FormGroup check>
       <Label check>
         <Input
+          id={id}
           type="checkbox"
+          checked={checked}
           onChange={onChange}
           disabled={disabled}
         />

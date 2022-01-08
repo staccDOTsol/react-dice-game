@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { ResultAreaView } from '../views';
 
 
-const mapStateToProps = ({ win, prevResultNumber }) => ({
+const mapStateToProps = ({ win, prevResultNumber, resultNumber, history }) => ({
   win,
-  resultNumber: prevResultNumber,
+  prevResultNumber,
+  resultNumber,
+  history
 });
 
 export default connect(mapStateToProps)(ResultAreaView);

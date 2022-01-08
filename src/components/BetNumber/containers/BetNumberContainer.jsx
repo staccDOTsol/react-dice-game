@@ -12,7 +12,7 @@ class BetNumberContainer extends Component {
   render() {
     return (
       <InputControl
-        label="Number"
+        label="Lucky Number"
         onChange={this.handleChange}
       />
     );

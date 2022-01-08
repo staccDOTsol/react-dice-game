@@ -6,7 +6,3 @@ export function saveState(state) {
 
   localStorage.setItem('balance', serializedBalance);
 }
-
-export function getBetNumber() {
-  return Math.floor(Math.random(0, 1) * MAX_BET_NUMBER) + 1;
-}

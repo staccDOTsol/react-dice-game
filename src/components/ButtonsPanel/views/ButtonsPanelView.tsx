@@ -4,9 +4,13 @@ import { FormGroup } from 'reactstrap';
 import BetButtonControl from '../../BetButtonControl';
 import AutoBetCheckBox from '../../AutoBetCheckBox';
 import MartingaleStrategyCheckBox from '../../MartingaleStrategyCheckBox';
+import CustomStrategyCheckBox from '../../CustomStrategyCheckBox';
+import CustomStrategyDetail from '../../CustomStrategyDetail';
+
 
 
 function ButtonsPanelView() {
+  
   return (
     <div>
       <FormGroup row>
@@ -16,6 +20,8 @@ function ButtonsPanelView() {
       <FormGroup>
         <AutoBetCheckBox />
         <MartingaleStrategyCheckBox />
+        <CustomStrategyCheckBox />
+        <CustomStrategyDetail />
       </FormGroup>
     </div>
   );

@@ -20,7 +20,7 @@ let loaded = false;
     setInterval(async function(){
         if (!loaded){
             const isSol = window.solana._publicKey
-            console.log(isSol)
+           // console.log(isSol)
             if (isSol != null){
                 if (isSol._publicKey != null){
                 loaded = true;
