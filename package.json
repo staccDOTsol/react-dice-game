@@ -15,8 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start --verbose",
-    "build": "cp ./replace-react-scripts-webpack.config.js node_modules/react-scripts/config/webpack.config.js"
-    
+    "build": "cross-env cp ./replace-react-scripts-webpack.config.js node_modules/react-scripts/config/webpack.config.js && react-scripts build",
+    "build1": "react-scripts build --verbose"
   },
   "license": "ISC",
   "devDependencies": {

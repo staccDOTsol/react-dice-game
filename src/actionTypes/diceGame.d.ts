@@ -1,0 +1,10 @@
+export declare const START_MAKE_BETS = "START_MAKE_BETS";
+export declare const FINISH_MAKE_BETS = "FINISH_MAKE_BETS";
+export declare const SET_BET_AMOUNT = "SET_BET_AMOUNT";
+export declare const SET_BET_NUMBER = "SET_BET_NUMBER";
+export declare const SET_NUMBER_OF_BETS = "SET_NUMBER_OF_BETS";
+export declare const SET_AUTO_BET = "SET_AUTO_BET";
+export declare const SET_MARTINGALE_STRATEGY = "SET_MARTINGALE_STRATEGY";
+export declare const SET_CUSTOM_STRATEGY = "SET_CUSTOM_STRATEGY";
+export declare const SET_CUSTOM_STRATEGY_BOOL = "SET_CUSTOM_STRATEGY_BOOL";
+export declare const GET_FREE_CREDITS = "GET_FREE_CREDITS";
