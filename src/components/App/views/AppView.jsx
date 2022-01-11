@@ -57,7 +57,7 @@ export const AppView = () => {
                 <WalletModalProvider>
                  <h1>  We're growers not showers <br />
 
-We test in prod </h1><p>Careful with autobet, bets > 1% of treasury sol will be rejected<br />WTB liquidity WTS revenueshare nfts, stay tuned... </p>
+We test in prod </h1><p>Careful with autobet, bets > 1% of treasury sol will be rejected<br />WTB liquidity WTS revenueshare nfts, stay tuned...<br /> first roll per visit is a bit more pricey to set up your randomness shack </p>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
                     <Container>
