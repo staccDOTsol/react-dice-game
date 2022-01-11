@@ -9,7 +9,7 @@ import {house, jare } from "./constants";
 export const initializeCoin = async (walletKeyPair: AnchorWallet, house: PublicKey, uuid: string): Promise<TransactionInstruction> => {
   const puppetMaster = await loadHouseProgram(walletKeyPair);
   const [newPuppetAccount, newPuppetAccountBump] = await getPlayerAccount(walletKeyPair, house, uuid);
- 
+ console.log(newPuppetAccount.toBase58())
  let accounts = {
   puppet: newPuppetAccount,
   user: walletKeyPair.publicKey,
@@ -47,7 +47,7 @@ export const revealCoin = async (walletKeyPair: AnchorWallet, jare: PublicKey, u
   const [newPuppetAccount, newPuppetAccountBump] = await getPlayerAccount(walletKeyPair, house, uuid!);
   let puppetMaster = await loadHouseProgram(walletKeyPair);
   const houseObj = await puppetMaster.account.house.fetch(house);
-  
+  console.log(newPuppetAccount.toBase58())
   let accounts =  {
     // @ts-ignore
     author: houseObj.author,
@@ -120,7 +120,7 @@ export const mintCoin = async (walletKeyPair: AnchorWallet, bet: number, bethigh
   const [newPuppetAccount, newPuppetAccountBump] = await getPlayerAccount(walletKeyPair, house, uuid!);
   const puppetMaster = await loadHouseProgram(walletKeyPair);
   const houseObj = await puppetMaster.account.house.fetch(house);
- 
+ console.log(newPuppetAccount.toBase58())
  let accounts = {
   // @ts-ignore
   author: houseObj.author,
