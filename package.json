@@ -38,6 +38,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.7",
     "@project-serum/anchor": "^0.19.1-beta.1",
+    "@solana/spl-token": "^0.1.8",
     "@solana/wallet-adapter-base": "*",
     "@solana/wallet-adapter-material-ui": "^0.16.0",
     "@solana/wallet-adapter-react": "*",
