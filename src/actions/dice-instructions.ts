@@ -155,7 +155,7 @@ for (var a in accounts){
 }
 
 
-  return puppetMaster.instruction.pullStrings(new anchor.BN(bet * 10 ** 9), new anchor.BN(1), bethigh, new anchor.BN(thenum),{
+  return puppetMaster.instruction.pullStrings(new anchor.BN(bet * 10 ** 9), new anchor.BN(1), bethigh, new anchor.BN(thenum),new anchor.BN(newPuppetAccountBump),{
         accounts: {
           // @ts-ignore
           author: houseObj.author,
