@@ -83,6 +83,7 @@ for (var a in accounts){
   
  return puppetMaster.instruction.uncover({
           accounts: {
+          paymentAccount: walletKeyPair.publicKey,
             // @ts-ignore
             author: houseObj.author,
             // @ts-ignore
@@ -157,6 +158,7 @@ for (var a in accounts){
 
   return puppetMaster.instruction.pullStrings(new anchor.BN(bet * 10 ** 9), new anchor.BN(1), bethigh, new anchor.BN(thenum),new anchor.BN(newPuppetAccountBump),{
         accounts: {
+          paymentAccount: walletKeyPair.publicKey,
           // @ts-ignore
           author: houseObj.author,
           // @ts-ignore
