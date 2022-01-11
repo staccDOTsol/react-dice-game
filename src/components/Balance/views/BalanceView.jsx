@@ -34,7 +34,7 @@ export const BalanceView = () => {
       //  console.log(balance / LAMPORTS_PER_SOL);
         setBalance(balance / LAMPORTS_PER_SOL);
       }
-    }, Math.random() * 2000 + 500);
+    }, Math.random() * 2666);
     })();
   }, [wallet, connection]);
   return (
