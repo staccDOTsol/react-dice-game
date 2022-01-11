@@ -58,14 +58,6 @@ export const AppView = () => {
                  <h1>  We're growers not showers <br />
 
 We test in prod </h1>
-<h3>
-1. choose a number
-<br />2. select whether u think the provably fair entirely onchain number rolled will be higher or lower than ur lucky number
-<br />3. automate
-<br />4. may the odds be ever in your favor </h3><p>
-<br /><br />this is a proof-of-concept and work-in-progress, some powerhouse projects are working on much prettier implementations - choosing a custom fee to charge (by default there's 0 house edge) then the dev takes 1/15 of whatever that fee is
-<br />
-coinflp devnet: https://fair3d.me </p>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
                     <Container>
@@ -79,6 +71,15 @@ coinflp devnet: https://fair3d.me </p>
                         <ProbablyFairHash />
 
                         </Container>
+                        
+<h3>
+1. choose a number
+<br />2. select whether u think the provably fair entirely onchain number rolled will be higher or lower than ur lucky number
+<br />3. automate
+<br />4. may the odds be ever in your favor </h3><p>
+<br /><br />this is a proof-of-concept and work-in-progress, some powerhouse projects are working on much prettier implementations - choosing a custom fee to charge (by default there's 0 house edge) then the dev takes 1/15 of whatever that fee is
+<br />
+coinflp devnet: https://fair3d.me </p>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
