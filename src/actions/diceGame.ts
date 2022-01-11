@@ -157,7 +157,7 @@ let       balance = await getBal();
       const resp =await sendTransactionWithRetryWithKeypair(solConnection, wallet, [await revealCoin(wallet, new PublicKey(jare), localUuid)], [], 'singleGossip', false);
       //console.log(resp.txid);
 
-      const txlog = await solConnection.getParsedConfirmedTransaction(resp.txid, "finalized")
+      const txlog = await solConnection.getParsedConfirmedTransaction(resp.txid, "confirmed")
       //console.log(txlog.meta.logMessages)
       prevResultNumber = resultNumber;
       //alert('Rolled a ' + txlog.meta.logMessages[4].replace("Program log: ", "") + '!');
