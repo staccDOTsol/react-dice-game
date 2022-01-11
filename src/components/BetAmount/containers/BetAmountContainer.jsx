@@ -17,7 +17,7 @@ class BetAmountContainer extends Component {
   render() {
     return (
       <InputControl
-        label="Bet Amount *max 0.05*"
+        label="Bet Amount"
         onChange={this.handleChange}
       />
     );

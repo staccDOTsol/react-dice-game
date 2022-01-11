@@ -57,7 +57,7 @@ export const AppView = () => {
                 <WalletModalProvider>
                  <h1>  We're growers not showers <br />
 
-We test in prod </h1>
+We test in prod </h1><p>Careful with autobet, bets > 1% of treasury sol will be rejected </p>
                     <WalletMultiButton />
                     <WalletDisconnectButton />
                     <Container>
@@ -71,7 +71,7 @@ We test in prod </h1>
                         <ProbablyFairHash />
 
                         </Container>
-                        
+
 <h3>
 1. choose a number
 <br />2. select whether u think the provably fair entirely onchain number rolled will be higher or lower than ur lucky number
