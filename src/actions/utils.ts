@@ -8,7 +8,7 @@ import {FEES, HOUSE_PROGRAM_ID, PREFIX, TREASURY} from "./constants";
 export async function loadHouseProgram(walletWrapper: AnchorWallet) {
   const solConnection = new Connection("https://solana--mainnet.datahub.figment.io/apikey/36eb346d92b67d8fd9046b02347b13f1");
   const provider = new anchor.Provider(solConnection, walletWrapper, {
-    preflightCommitment: 'confirmed', commitment: 'confirmed'
+    preflightCommitment: 'finalized', commitment: 'finalized'
   });
   const idl = await anchor.Program.fetchIdl(
       HOUSE_PROGRAM_ID,
