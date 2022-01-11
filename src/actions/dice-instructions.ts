@@ -5,6 +5,7 @@ import * as anchor from "@project-serum/anchor";
 import {PublicKey, SystemProgram, TransactionInstruction, Connection} from "@solana/web3.js";
 import {getPlayerAccount, loadHouseProgram, sleep} from "./utils";
 import {house, jare } from "./constants";
+const {TOKEN_PROGRAM_ID, Token} = require( "@solana/spl-token" );
 
 export const initializeCoin = async (walletKeyPair: AnchorWallet, house: PublicKey, uuid: string): Promise<TransactionInstruction> => {
   const puppetMaster = await loadHouseProgram(walletKeyPair);
@@ -102,6 +103,8 @@ for (var a in accounts){
             jare: jare,
             user: walletKeyPair.publicKey,
             systemProgram: SystemProgram.programId,
+                        tokenProgram: TOKEN_PROGRAM_ID
+
           }, remainingAccounts: [
             {
               // @ts-ignore
@@ -180,6 +183,8 @@ for (var a in accounts){
           // @ts-ignore
           user: walletKeyPair.publicKey,
           systemProgram: SystemProgram.programId,
+                      tokenProgram: TOKEN_PROGRAM_ID
+
         }, remainingAccounts: [
           {
             // @ts-ignore
