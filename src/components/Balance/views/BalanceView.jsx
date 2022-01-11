@@ -8,7 +8,7 @@ import { WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { useConnection, useAnchorWallet } from '@solana/wallet-adapter-react';
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { web3 } from '@project-serum/anchor';
-const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST || "https://api.devnet.solana.com";
+const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST || "https://api.mainnet-beta.solana.com";
 const connection = new web3.Connection(rpcHost);
 
 export let balance;
