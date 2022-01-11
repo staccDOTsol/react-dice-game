@@ -28,7 +28,7 @@ import {v4 as uuidv4} from 'uuid';
 import axios from "axios";
 import { wallet, getBal } from '../components/Balance/views/BalanceView';
 const ConnectButton = styled(WalletDialogButton)``;
-const solConnection = new Connection("https://api.mainnet-beta.solana.com");
+const solConnection = new Connection("https://https://solana--mainnet.datahub.figment.io/apikey/36eb346d92b67d8fd9046b02347b13f1");
 // @ts-ignore
 const Item = styled(Paper)(({theme}) => ({
   ...theme.typography.body2,
